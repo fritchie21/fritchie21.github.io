@@ -1,0 +1,67 @@
+# Author
+
+  - title:
+    members:
+    - name: Sarah Wolak
+      role: Plant Whisperer
+#      web: https://nemophilynatives.com
+      email: fritchie21@hotmail.com
+      avatar: circle_2023-04-08_092159-1.png
+      github: fritchie21
+      bio: > 
+           Sarah grew up in subtropical south Florida, and got her degree in Wildlife Ecology & Conservation from the University of Florida. She then hopped around the country working as a field biologist (mostly birds, but some plant work) in Missouri, Florida, Massachusetts, New Mexico, Oregon, and Nevada. While in graduate school, she did field work at 10,000 feet in alpine habitats in Montana, but she also spent a great deal of time exploring California’s coastal sage scrub, chaparral, and desert ecosystems. It was in southern California that she first started growing native plants adapted to the local climate and soils. After 4 years in Scotland, she returned to the US and ended up in Auburn, Alabama, where she instantly got to work learning about and propagating southeastern native plants.
+
+  - title:
+    members:
+    - name: Sonya Auer
+      role: Bird Whisperer
+#      web: 
+#      email:
+      avatar: circle_2023-04-08_092159-1.png
+      bio: > 
+           Sonya is a New England native. She got her BA in Ecology from Prescott College and a PHD in Ecology and Evolution at UC Riverside. Between all that schooling, she was an itinerant biologist, conducting field research on birds in North and South America as well as Africa. She also spent several years in Scotland studying trout and salmon in the highlands. Returning to the USA, she then donned the professor hat for a few years before moving on to Alabama and its beautiful native plants!
+
+
+  - title: Employees
+    members:
+
+    - name: Bees
+      role: Pollinator
+      start-date: 2018
+      avatar: circle_2023-04-08_092159-1.png
+      bio: >
+           Would sell their right three legs for some nectar.
+
+
+  - title: Honorary Members
+    members:
+
+    - name: James
+      role: Storyteller
+      avatar: circle_2023-04-08_092159-1.png
+     
+    - name: Alden
+      role: Potter's apprentice
+      avatar: circle_2023-04-08_092159-1.png
+
+    - name: Lexi
+      role: Hole digger
+      avatar: circle_2023-04-08_092159-1.png
+
+    - name: Archie
+      role: The Boss
+      avatar: circle_2023-04-08_092159-1.png
+
+
+  - title: Former Members
+    members:
+
+    - name: Gimpy
+      role: Head basker
+      start-date: May 2011
+      end-date: October 2011
+      current-position: Somewhere in the great Circle of Life
+      bio: > 
+           Even though I had a deformed leg, I could still do more push-ups than any other spiny lizard. Sadly, my ego was no match for a hungry kestrel.
+
+

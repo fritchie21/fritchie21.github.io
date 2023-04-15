@@ -1,0 +1,726 @@
+/* ==========================================================================
+   Page layout
+   ========================================================================== */
+
+/*
+   Masthead
+   ========================================================================== */
+
+#masthead {
+	padding: $gutter;
+	z-index: 5;
+	@include transform(translate(0,0));
+	@include transition(500ms cubic-bezier(.645,.045,.355,1.000));
+	&.slide {
+		@include transform(translate(-1600px,0));
+	}
+	.inner-wrap {
+		@include outer-container;
+	}
+}
+.site-title {
+	@include row;
+	@include media($large) {
+		@include span-columns(4);
+	}
+	padding: (.25 * $masthead-height) 0; // fourth the height to center vertically
+	height: $masthead-height;
+	text-decoration: none;
+	color: $black;
+	font-family: $alt-font;
+	font-weight: 700;
+	@include font-size(20,no);
+	line-height: .5 * $masthead-height; // half the height to center vertically
+	text-transform: uppercase;
+}
+
+
+/*
+   Menus
+   ========================================================================== */
+
+.menu {
+	li {
+		float: left;
+		&:last-child a {
+			@include media($medium) {
+				margin-right: 0; // remove spacing from last menu link
+			}
+		}
+		a {
+			// line hover effect
+			position: relative;
+			display: block;
+			margin-right: $gutter;
+			padding: (.25 * $masthead-height) 0 (.25 * $masthead-height) ;
+			height: $masthead-height;
+			font-family: $alt-font;
+			&:before,
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 2px;
+				@include transition(width 0.3s);
+			}
+			&:before {
+				width: 100%;
+				background: transparent;
+			}
+			&:after {
+				width: 0;
+				background: $black;
+			}
+			&:active:after,
+			&:hover:after {
+				width: 100%;
+			}
+		}
+	}
+}
+
+/* Top menu navigation */
+
+.top-menu {
+	display: none;
+	position: relative;
+	@include media($medium) {
+		@include span-columns(12);
+	}
+	@include media($large) {
+		@include span-columns(7);
+		ul {
+			position: absolute;
+			right: 0;
+		}
+	}
+	.home,
+	.sub-menu-item {
+		display: none;
+	}
+	li {
+		a {
+			font-weight: 700;
+			@include font-size(16,no);
+			line-height: .5 * $masthead-height; // half the height to center vertically
+			color: $black;
+			text-transform: uppercase;
+		}
+	}
+}
+
+/* Bottom menu navigation */
+
+.bottom-menu {
+	@include clearfix;
+	font-weight: 700;
+	a {
+		color: lighten($black,60);
+	}
+}
+
+
+/*
+   Page wrapper
+   ========================================================================== */
+
+#page-wrapper {
+	padding: 0 $gutter; // add white space for smaller screens
+	@include size(100% 100%);
+	-webkit-overflow-scrolling: touch;
+	z-index: 2;
+	@include transform(translate(0,0));
+	@include transition(500ms cubic-bezier(.645,.045,.355,1.000));
+	&.slide {
+		@include transform(translate(-60rem,0));
+	}
+}
+
+/*
+   Main content
+   ========================================================================== */
+
+#main {
+	.inner-wrap {
+		@include media($medium) {
+			@include span-columns(9);
+		}
+	}
+	.page-title {
+		@include fill-parent;
+	}
+	@at-root {
+		.page-content {
+			@include fill-parent;
+			// larger font for intro paragraph
+			> p {
+				&:first-child {
+					@include font-size(20,yes,30);
+				}
+			}
+			// cleaner underlines for links
+			a { text-decoration: none; }
+			p a,
+			li a {
+				border-bottom: 1px dotted lighten($link-color, 50);
+				&:hover {
+					border-bottom-style: solid;
+				}
+			}
+			p > a.reversefootnote {
+				border-bottom-width: 0;
+			}
+      .toc li > a {
+        border-bottom-width: 0;
+      }
+			.page-footer,
+			.pagination {
+				@include fill-parent;
+			}
+			.page-meta {
+				p{
+					@include font-size(14,no);
+					font-family: $alt-font;
+					color: lighten($black,60);
+				}
+			}
+		}
+	}
+	@at-root {
+		.archive-wrap {
+			@include fill-parent;
+			.page-content {
+				@include reset-all;
+				@include fill-parent;
+			}
+		}
+	}
+  /* advertisements */
+	.ads {
+		position: relative;
+		text-align: center;
+		margin-top: $gutter;
+		margin-left: -$gutter;
+		margin-right: -$gutter;
+		padding: 10px 0 20px;
+		background: lighten($border-color,5);
+		@include media($medium) {
+			@include span-columns(3);
+			margin-left: 0;
+			margin-right: 0;
+		}
+		&:after {
+			content: 'Advertisement';
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			display: block;
+			@include font-size(9,no);
+			font-family: $alt-font;
+		}
+		ins {
+			border-width: 0;
+		}
+	}
+}
+// page lead
+.page-lead {
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	text-align: center;
+	color: $white;
+	@include media($large) {
+		background-size: cover;
+	}
+}
+.page-lead-content {
+	padding: 1em;
+	@include media($medium) {
+		padding: 2em;
+	}
+	@include media($large) {
+		padding: 3em;
+	}
+	h1 {
+		@include font-size(48);
+		@include media($medium) {
+			@include font-size(60);
+		}
+		@include media($large) {
+			@include font-size(72);
+		}
+	}
+	h2 {
+		@include font-size(20);
+		@include media($medium) {
+			@include font-size(24);
+		}
+		@include media($large) {
+			@include font-size(32);
+		}
+	}
+}
+// page header
+.page-feature {
+	@include fill-parent;
+	// expand image to cover full width of header
+	img {
+		width: 100%;
+	}
+}
+// make image flush with edges on small screens
+.page-image {
+	position: relative;
+	margin-left: -1 * $gutter;
+	margin-right: -1 * $gutter;
+	// feature image caption
+	.image-credit {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin: 0 auto;
+		padding: 10px 15px;
+		background-color: rgba($black,.5);
+		color: $white;
+		font-family: $alt-font;
+		@include font-size(12,no);
+		text-align: right;
+		z-index: 10;
+		a {
+			color: $white;
+			text-decoration: none;
+		}
+	}
+}
+
+/*
+   Page footer
+   ========================================================================== */
+
+.page-footer {
+	position: relative;
+}
+
+/* Author block */
+
+.author-image {
+	position: absolute;
+	left: 0;
+	img {
+		width: 80px;
+		height: 80px;
+		border-radius: $border-radius;
+	}
+}
+.author-content {
+	word-wrap: break-word;
+	padding-left: 100px; //avatar width + 20px padding
+	min-height: 80px; //mirrors avatar height
+}
+.author-name {
+	@include font-size(20,no);
+}
+.author-bio {
+	margin-top: 0;
+	@include font-size(16);
+}
+
+/*
+   Site footer
+   ========================================================================== */
+
+#site-footer {
+	@include outer-container;
+	margin-top: (3 * (0px + $doc-line-height));
+	margin-top: (3 * (0rem + ($doc-line-height / $doc-font-size)));
+	padding-bottom: $gutter;
+	font-family: $alt-font;
+  /* Copyright text */
+	.copyright {
+		@include font-size(12);
+		color: lighten($black,60);
+		a {
+			color: lighten($black,60);
+			text-decoration: none;
+		}
+	}
+}
+
+/*
+   Pineapple layout
+   ========================================================================== */
+.container {
+	display: block;
+	margin: 0 auto;
+	max-width: 70em;
+	padding: 0 3rem;
+	@include clearfix;
+}
+
+.header {
+	background: $white;
+	padding: 3rem 0;
+}
+
+.logo {
+	float: left;
+	font-size: 1.8rem;
+	font-weight: 600;
+	margin: 0;
+	line-height: 1;
+}
+
+.nav {
+	float: right;
+
+	a {
+		@extend .logo;
+	}
+}
+
+.content {
+	background: $white;
+	padding: 7rem 0 0;
+	margin-bottom: 31.24rem;
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+	@media (min-width: $breakpoint-medium) {
+		padding: 21rem 0 0;
+		margin-bottom: 23.42rem;
+	}
+}
+
+.intro,
+.plants {
+	padding: 0 0 5rem;
+}
+
+.intro {
+	@media (min-width: $breakpoint-medium) {
+		p {
+			font-size: 2.7rem;
+			max-width: 66.66666%;
+		}
+	}
+}
+
+.plants-list {
+	@media (min-width: $breakpoint-small) {
+		margin-left: -1.5rem;
+		margin-right: -1.5rem;
+		@include clearfix;
+
+		li {
+			float: left;
+			width: 50%;
+		}
+
+		a {
+			padding: 0 1.5rem;
+		}
+	}
+
+	@media (min-width: $breakpoint-medium) {
+		li {
+			width: 33.33333%;
+		}
+	}
+
+	li {
+		margin-bottom: 3rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	a {
+		display: block;
+
+		&:hover {
+			.img-wrapper {
+				&:before {
+					opacity: 1;
+				}
+				&:after {
+					opacity: .45;
+				}
+			}
+		}
+	}
+
+	.img-wrapper {
+		position: relative;
+
+		&:before {
+			content: "View Plant";
+			color: $white;
+			@extend .h2;
+			font-weight: 800;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -.5rem;
+			margin-left: -4.4rem;
+			opacity: 0;
+			-webkit-transition: all .5s ease-in-out;
+    		transition: all .5s ease-in-out;
+    		-webkit-transition-delay: .25s;
+    		transition-delay: .25s;
+    		z-index: 2;
+		}
+
+		&:after {
+			background: #000;
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			opacity: 0;
+			-webkit-transition: all .5s ease-in-out;
+    		transition: all .5s ease-in-out;
+    		z-index: 1;
+		}
+	}
+
+	img {
+		width: 100%;
+	}
+
+	span {
+		margin: 1rem 0 .5rem;
+	}
+}
+
+.plant {
+	left: 0;
+	position: relative;
+	top: 0;
+
+	@media (min-width: $breakpoint-medium) {
+		margin-top: -21rem;
+
+		.article-wrapper {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+
+	.container {
+		max-width: 100%;
+	}
+
+	article {
+		margin-bottom: 3rem;
+
+		@media (min-width: $breakpoint-medium) {
+			float: right;
+			right: 0;
+			width: 40%;
+			position: absolute;
+			right: 5%;
+		}
+	}
+
+	aside {
+		margin-left: -3rem;
+		margin-right: -3rem;
+
+		@media (min-width: $breakpoint-small) {
+			@include clearfix;
+		}
+
+		@media (min-width: $breakpoint-medium) {
+			float: left;
+			width: 55%;
+		}
+	}
+
+	.plant-meta {
+		margin: 3rem 0 0;
+
+		@media (min-width: $breakpoint-medium) {
+			margin: 5rem 0 0;
+			max-width: 70%;
+		}
+	}
+
+	.h2 {
+		margin: 3rem 0 .5rem;
+
+		&:first-of-type {
+			margin-top: 0;
+		}
+	}
+
+	h1 {
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	li {
+		margin-bottom: 0rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+.plant-navigation {
+	background: $black;
+	padding: 5rem 0;
+
+	a {
+		color: $white;
+		display: inline-block;
+
+		&:hover {
+			h2:after {
+				visibility: visible;
+				-webkit-transform: scaleX(1);
+				transform: scaleX(1);
+			}
+
+			&.prev {
+				span {
+					left: 7px;
+				}
+			}
+
+			span {
+				&:after {
+					left: 7px;
+				}
+
+				&:before {
+					left: -7px;
+				}
+			}
+		}
+
+		&:nth-of-type(1),
+		&:nth-of-type(2) {
+			display: table;
+			margin: 0 auto;
+			text-align: center;
+
+			@media (min-width: $breakpoint-xsmall) {
+				display: inline-block;
+				margin: 0;
+				text-align: left;
+			}
+		}
+
+		&:nth-of-type(1) {
+			@media (min-width: $breakpoint-xsmall) {
+				float: left;
+			}
+		}
+
+		&:nth-of-type(2) {
+			margin-top: 3rem;
+
+			@media (min-width: $breakpoint-xsmall) {
+				float: right;
+				margin-top: 0;
+			}
+		}
+
+		&.next {
+			span {
+				&:after {
+					content: "\02192";
+				}
+			}
+		}
+
+		&.prev {
+			span {
+				position: relative;
+				left: 0;
+				-webkit-transition: all .3s ease-in-out 0s;
+				transition: all .3s ease-in-out 0s;
+
+				&:before {
+					content: "\02190";
+				}
+			}
+		}
+	}
+
+	span {
+		&:after,
+		&:before {
+			position: relative;
+			left: 0;
+			-webkit-transition: all .3s ease-in-out 0s;
+			transition: all .3s ease-in-out 0s;
+		}
+	}
+
+	h2 {
+		display: inline-block;
+		font-size: 1.8rem;
+		position: relative;
+
+		&:after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			bottom: -4px;
+			left: 0;
+			background: $white;
+			visibility: hidden;
+			-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+			-webkit-transition: all .3s ease-in-out 0s;
+			transition: all .3s ease-in-out 0s;
+		}
+	}
+}
+
+.footer {
+	background: $color-alabaster;
+	bottom: 0;
+	left: 0;
+	padding: 5rem 0;
+	position: fixed;
+	right: 0;
+	z-index: -1;
+}
+
+.contact,
+.follow {
+	@media (min-width: $breakpoint-medium) {
+		float: left;
+		margin-bottom: 0;
+		width: 33.33333%;
+	}
+}
+
+.contact,
+.follow {
+	margin-bottom: 3rem;
+}
+
+

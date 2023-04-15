@@ -1,0 +1,17 @@
+# Footer navigation links
+
+- title: Home
+  url: /
+
+#- title: News
+#  url: /news
+
+#- title: Plants
+#  url: /plants/
+
+#- title: Posts
+#  url: /articles
+
+- title: About
+  url: /about/
+
