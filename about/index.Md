@@ -1,7 +1,6 @@
 ---
 layout: media
-title: "Meet the Nursery:"
-permalink: /about/
+title: "Meet the Nursery"
 ---
 
 We are friends, biologists, lovers of birds, plants, and wild spaces. We first met in 2005 in grad school at the University of California, Riverside, where we bonded over a love of birding. We continued to cross paths over the next two decades, through Scotland (Sonya in Glasgow, Sarah in Aberdeen), and now in Auburn, AL.
