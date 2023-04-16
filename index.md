@@ -7,7 +7,13 @@ image:
 ---
 
 
-Open Wednesdays from 9 AM til 1 PM, and Saturdays from 9 AM til 2 PM.
+We are open:
+  - Wednesdays from 9 AM til 1 PM
+  - Saturdays from 9 AM til 2 PM
+  - or by appointment <a href="mailto:{{ member.email }}" class="member-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email: nemophilynatives@gmail.com </a>
+  <!-- 
+  <a class="member-social" target="_blank"><i class="fa fa-fw fa-phone-square"></i> Phone: XXX-XXX-XXX</a>
+  -->
 
 ## Native plants of the southeastern USA
 

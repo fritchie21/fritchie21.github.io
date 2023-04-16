@@ -46,7 +46,7 @@ $caption-color                : mix($white, $text-color, 25%);
 
 $base-color                  	: $black; //#03244d;
 $comp-color                  	: complement($base-color);
-$border-color                	: #e86823;
+$border-color                	: #194d1b;  // greenish  #e86823;// orange
 $link-color                  	: #222;
 
 $primary-color               	: $black;
@@ -96,13 +96,13 @@ $form-font-size              	: $doc-font-size;
    ========================================================================== */
 
 $sliding-menu-border-color	 	 : $black;
-$sliding-menu-background 		   : #8000FF; //$black;
-$sliding-menu-color 	 		     : $white;
-$sliding-menu-background-hover 		: $black;
-$sliding-menu-color-hover	 	   : $white;
-$sliding-menu-border   			   : 1px solid $sliding-menu-border-color;
-$button-size		         	     : 30px;
-$transition						         : 0.1s; // increase this to see the transformations in slow-motion
+$sliding-menu-background 		 : #194d1b;  //green //$black;
+$sliding-menu-color 	 		 : $white;
+$sliding-menu-background-hover 		 : $black;
+$sliding-menu-color-hover	 	 : $white;
+$sliding-menu-border   			 : 1px solid $sliding-menu-border-color;
+$button-size		         	 : 30px;
+$transition				 : 0.1s; // increase this to see the transformations in slow-motion
 $sliding-menu-animation        : all 500ms cubic-bezier(.86,.01,.77,.78);
 
 /*
