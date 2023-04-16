@@ -6,7 +6,7 @@ description: "Specializing in native plants for the southeastern USA"
 teaser: # 400x250 px default teaser image used in image archive grid
 locale: en_US
 #url: https://fritchie21.github.io
-url: https://XXXXnemophilynursery.com
+url: https://nemophilynursery.com
 feed:
   path: atom.xml
 
