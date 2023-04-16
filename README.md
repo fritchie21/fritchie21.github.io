@@ -15,6 +15,8 @@ All changes to the content and styling happen within the second type of branch (
 
 ### Be sure to make changes to a branch other than `master` (e.g., in `preJekyll-src`).
 
+## Steps on "source" branch (i.e., NOT `master`)
+
 To preview the site with drafts on a localhost, run `bundle exec jekyll serve --drafts` with the `--drafts` switch.
 
 ```
@@ -39,7 +41,11 @@ rm ./index.html
 JEKYLL_ENV=production bundle exec jekyll build
 
 rsync -azv --delete /<< FIXME: FULL path to git repository >>/fritchie21.github.io/_site/ /<< FIXME: FULL path to git repository >>/jekyllBuiltSiteFiles
+```
 
+## Steps on `master` branch for publishing
+
+```
 git checkout master
 rsync -azv /<< FIXME: FULL path to git repository >>/jekyllBuiltSiteFiles/ /<< FIXME: FULL path to git repository >>/fritchie21.github.io/
 
