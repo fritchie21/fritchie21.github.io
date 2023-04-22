@@ -3,19 +3,19 @@ layout: plants
 categories: plants
 
 meta:
-  keywords: "Jekyll, Pineapple"
+  keywords: "native, yellow, sunflower"
 
 plant:
   title: "Helianthus helianthoides"
   type: "Jekyll" 
   url: "https://github.com/arnolds/pineapple"
   logo: "/images/plants/redpineapple/logo.png"
-  req: "HTML, CSS, Boostrap, Sass, JavaScript, jQuery, Jekyll"
+  req: "sun/shade, water/dry, love"
 
 common:
   title: "Early sunflower, Oxeye sunflower"
   url: "https://github.com/arnolds/pineapple"
-  year: "2017"
+  blooms: "when it is ready"
 
 images:
   - image:

@@ -4,44 +4,32 @@ layout: default
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>{{ site.author }} / {{ page.plant.title }}</title>
-	<meta name="author" content="{{ site.author }}">
-	<meta name="description" content="{{ page.content | strip_html | strip_newlines }}">
-	<meta name="keywords" content="{{ page.meta.keywords }}">
-	{% include head.html %}
-</head>
 <body>
-	{% include header.html %}
 	<main class="content">
 		<section class="plant">
 			<div class="container">
 				<article>
-					<span class="h2">Plant Title</span>
-					<h1>
-						<a href="{{ page.plant.url }}" target="_blank" title="{{ page.plant.title }}" rel="nofollow">{{ page.plant.title }}</a>
-					</h1>
-					<span class="h2">Role</span>
+					<span class="h1"><h1>{{ page.plant.title }}</h1></span>
+		
+					<span class="h3"><h3>Description</h3></span>
 					{{ page.content }}
 					<div class="plant-meta">
 					
-						<span class="h2">Requirements</span>
+						<span class="h2"><h3>Requirements</h3></span>
 						<p>{{ page.plant.req }}</p>
 						
-						<span class="h2">Common Names</span>
+						<span class="h3"><h3>Common Names</h3></span>
 						<p><a title="{{ page.common.title }}" href="{{ page.common.url }}" target="_blank" rel="nofollow">{{ page.common.title }}</a></p>
-						<span class="h2">Year</span>
-						<p>{{ page.common.year }}</p>
+						<span class="h3"><h3>Blooms</h3></span>
+						<p>{{ page.common.blooms }}</p>
 					</div>
 				</article>
 				<aside>
-					<ul>
 						{% for image in page.images %}
-						<li>
+						<figure>
 							<img src="{{ image.url | prepend: site.baseurl }}" alt="{{ image.alt }}" />
-						</li>
+							</figure>
 						{% endfor %}
-					</ul>
 				</aside>
 			</div>
 		</section>
@@ -62,10 +50,5 @@ layout: default
 			</div>
 		</section>
 	</main>
-	{% include footer.html %}
-	<script src="{{ "/js/vendor/jquery-1.12.4.min.js" | prepend: site.baseurl }}"></script>
-	<script src="{{ "/js/vendor/scrollreveal.min.js" | prepend: site.baseurl }}"></script>
-	<script src="{{ "/js/vendor/sticky-kit.min.js" | prepend: site.baseurl }}"></script>
-	<script src="{{ "/js/plant.js" | prepend: site.baseurl }}"></script>
 </body>
 </html>
