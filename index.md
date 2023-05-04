@@ -1,7 +1,7 @@
 ---
 layout: home
 permalink: /
-title:
+title: Alabama native plant nursery business
 image:
   feature: 20210604-11_44_45.png
 ---
