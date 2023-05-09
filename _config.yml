@@ -1,22 +1,22 @@
 # Site wide configuration
 
-title: 		Nemophily Natives
-description: 	Specializing in native plants for the southeastern USA
-#logo: xxx_siteLogoCard128px.png # 128x128 px default image used for Twitter summary card
-teaser: # 400x250 px default teaser image used in image archive grid
+title: 		"Nemophily Natives"
+description: 	"Specializing in native plants for the southeastern USA"
+logo: favicon.png # 128x128 px default image used for Twitter summary card
+teaser: favicon.png # 400x250 px default teaser image used in image archive grid
 locale: 	en_US
+baseurl:	""
 #url: https://fritchie21.github.io
 url: 		https://nemophilynatives.com
-baseurl:	""
 feed:
   path: atom.xml
 
 # Jekyll configuration
 
+#permalink: /:categories/:title/
 sass:
   sass_dir: _sass
   style: compressed
-#permalink: /:categories/:title/
 kramdown:
   toc_levels: 1..4
 highlighter: rouge
@@ -66,3 +66,6 @@ exclude:
   - package.json
   - spec
   - tmp
+  
+encoding: utf-8
+timezone: America/Chicago  
